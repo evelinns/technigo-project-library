@@ -1,3 +1,72 @@
+* {
+  font-family: Futura, sans-serif;
+}
+
 body {
-  background: blue;
+  background: #fafbff;
+  margin: 0;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+body > div {
+  padding: 64px;
+}
+
+h1 {
+  color: #0018a4;
+  font-weight: bold;
+  font-size: 64px;
+  line-height: 85.06px;
+  top: 64px;
+  margin: 0;
+}
+
+h2 {
+  color: #000000;
+  font-family: Futura;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 29.24px;
+  text-align: center;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+}
+
+#filters {
+  display: flex;
+  width: 654px;
+  height: 85px;
+  gap: 88px;
+}
+
+button {
+  color: #0018a4;
+  border: none;
+  border-radius: 50px;
+  height: 40px;
+  padding: 8px 16px 8px 16px;
+  cursor: pointer;
+}
+
+.kitchen-filters {
+  background-color: #ccffe2;
+}
+
+.time-filters {
+  background-color: #ffecea;
+}
+
+button.kitchen-filters:hover,
+.kitchen-filters.active {
+  background-color: #0018a4;
+  color: white;
+}
+
+button.time-filters:hover,
+.time-filters.active {
+  background-color: #ff6589;
+  color: white;
 }

@@ -1,13 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Don't forget to connect the CSS file -->
-  <title>Library</title>
-</head>
-<body>
-  <h1>Library</h1>
-  <!-- Don't forget to connect the JavaScript file -->
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Library</title>
+  </head>
+  <body>
+    <div>
+      <h1>Library</h1>
+      <div id="filters">
+        <div>
+          <h2>Filter on kitchen</h2>
+          <button class="kitchen-filters active">All</button>
+          <button class="kitchen-filters">Italy</button>
+          <button class="kitchen-filters">USA</button>
+          <button class="kitchen-filters">China</button>
+        </div>
+        <div>
+          <h2>Sort on time</h2>
+          <button class="time-filters active">Descending</button>
+          <button class="time-filters">Ascending</button>
+        </div>
+      </div>
+      <div id="cards"></div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
 </html>
