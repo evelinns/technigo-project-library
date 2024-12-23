@@ -10,20 +10,42 @@
     <div>
       <h1>Library</h1>
       <div id="filters">
-        <div>
+        <div class="wrapper">
           <h2>Filter on kitchen</h2>
-          <button class="kitchen-filters active">All</button>
-          <button class="kitchen-filters">Italy</button>
-          <button class="kitchen-filters">USA</button>
-          <button class="kitchen-filters">China</button>
+          <div>
+            <button class="kitchen-filters active">All</button>
+            <button class="kitchen-filters">Italy</button>
+            <button class="kitchen-filters">USA</button>
+            <button class="kitchen-filters">China</button>
+          </div>
         </div>
-        <div>
+        <div class="wrapper">
           <h2>Sort on time</h2>
-          <button class="time-filters active">Descending</button>
-          <button class="time-filters">Ascending</button>
+          <div>
+            <button class="time-filters active">Descending</button>
+            <button class="time-filters">Ascending</button>
+          </div>
         </div>
       </div>
-      <div id="cards"></div>
+      <div id="cards">
+        <div class="card">
+          <img
+            src="./recipe-images/individual-vegetarian-lasagnes.jpg"
+            alt=""
+          />
+          <h2>Individual vegetarian lasagnes</h2>
+          <span class="divider"></span>
+          <p><span class="bold">Cuisine:</span> Italian</p>
+          <p><span class="bold">Time:</span> 40 minutes</p>
+          <span class="divider"></span>
+          <p class="bold">Ingredients</p>
+          <p>
+            500 pack bread mix<br />2tbsp. olive oil, plus a little extra for
+            drizzling <br />25g parmesan (or vegetarian alternative), grated
+            <br />75g dolcelatte cheese (or vegetarian alternative)
+          </p>
+        </div>
+      </div>
     </div>
     <script src="./script.js"></script>
   </body>
