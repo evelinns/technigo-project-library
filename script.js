@@ -1,10 +1,3 @@
-/*Here we have created two different arrays that you can work with if you want.
-If you choose to create your own arrays with elements, just make sure to create
-some properties that is possible to filter and sort.
-
-Remember to remove code you don't need.
-*/
-
 const recipes = [
   {
     name: "Individual vegetarian lasagnes",
@@ -224,3 +217,59 @@ const recipes = [
     image: "./recipe-images/grilled.jpg",
   },
 ];
+
+const kitchenButtonToggle = document.querySelectorAll(".kitchen-filters");
+const timeButtonToggle = document.querySelectorAll(".time-filters");
+
+const buttonToggle = (buttonClicked) => {
+  buttonClicked.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      buttonClicked.forEach((f) => f.classList.remove("active"));
+      e.target.classList.toggle("active");
+    });
+  });
+};
+
+buttonToggle(kitchenButtonToggle);
+buttonToggle(timeButtonToggle);
+
+let recipeName = document.getElementById("recipeName");
+let cuisineType = document.getElementById("cuisineType");
+let cookingTime = document.getElementById("cookingTime");
+let ingredients = document.getElementById("ingredients");
+const cardWrapper = document.getElementById("cards");
+
+const createRecipeCard = () => {
+  const recipeCard = recipes
+    .map((el) => {
+      return `
+      <div class="card">
+            <img
+              src="${el.image}"
+              alt=""
+            />
+            <h2 id="recipeName">${el.name}</h2>
+            <span class="divider"></span>
+            <p>
+              <span class="bold">Cuisine:</span>
+              <span id="cuisineType">${el.cuisineType}</span>
+            </p>
+            <p>
+              <span class="bold">Time:</span>
+              <span id="cookingTime">${
+                el.totalTime ? el.totalTime : 0
+              }</span> minutes
+            </p>
+            <span class="divider"></span>
+            <p class="bold">Ingredients</p>
+            <p id="ingredients">${el.ingredients}
+            </p>
+          </div>
+    `;
+    })
+    .join("");
+
+  cardWrapper.innerHTML = recipeCard;
+};
+
+createRecipeCard();
