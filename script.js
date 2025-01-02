@@ -239,9 +239,31 @@ let cookingTime = document.getElementById("cookingTime");
 let ingredients = document.getElementById("ingredients");
 const cardWrapper = document.getElementById("cards");
 
+const capitalizeAndFormat = (text) => {
+  if (Array.isArray(text)) {
+    text = text.join(" ");
+  }
+  if (typeof text !== "string") {
+    return "";
+  }
+  return text.replace(/-/g, " ").replace(/\b\w/g, (char) => char.toUpperCase());
+};
+
+const ingredientsFormat = (text) => {
+  if (Array.isArray(text)) {
+    return text.join(", ").replace(/, /g, "<br>");
+  }
+  if (typeof text !== "string") {
+    return "";
+  }
+  return text.replace(/, /g, "<br>");
+};
+
 const createRecipeCard = () => {
   const recipeCard = recipes
     .map((el) => {
+      const formattedCuisine = capitalizeAndFormat(el.cuisineType);
+      const formattedIngredients = ingredientsFormat(el.ingredients);
       return `
       <div class="card">
             <img
@@ -252,7 +274,7 @@ const createRecipeCard = () => {
             <span class="divider"></span>
             <p>
               <span class="bold">Cuisine:</span>
-              <span id="cuisineType">${el.cuisineType}</span>
+              <span id="cuisineType">${formattedCuisine}</span>
             </p>
             <p>
               <span class="bold">Time:</span>
@@ -262,7 +284,7 @@ const createRecipeCard = () => {
             </p>
             <span class="divider"></span>
             <p class="bold">Ingredients</p>
-            <p id="ingredients">${el.ingredients}
+            <p id="ingredients">${formattedIngredients}
             </p>
           </div>
     `;
