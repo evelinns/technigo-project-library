@@ -7,3 +7,4 @@ Project showcasing recipe cards based on information from an array.
 - If I had more time I would work more on animations when different things are happening on the page.
 
 ## View it live
+https://technigo-recipe-library.netlify.app/
