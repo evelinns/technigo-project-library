@@ -12,18 +12,19 @@
       <div id="filters">
         <div class="wrapper">
           <h2>Filter on kitchen</h2>
-          <div>
-            <button class="kitchen-filters active">All</button>
-            <button class="kitchen-filters">Italy</button>
-            <button class="kitchen-filters">USA</button>
-            <button class="kitchen-filters">China</button>
+          <div id="kitchen-button-container">
+            <button data-cuisine="all" class="kitchen-filters active">
+              All
+            </button>
           </div>
         </div>
         <div class="wrapper">
           <h2>Sort on time</h2>
-          <div>
-            <button class="time-filters active">Descending</button>
-            <button class="time-filters">Ascending</button>
+          <div id="time-button-container">
+            <button data-sort="desc" class="time-filters active">
+              Descending
+            </button>
+            <button data-sort="asc" class="time-filters">Ascending</button>
           </div>
         </div>
       </div>
